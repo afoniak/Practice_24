@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{goods-style.css}">
+    <title>SHINY DISHES</title>
+</head>
+<body>
+<header th:insert="header"></header>
+<br><br>
+<<div class="container my-5">
+    <h2 class="text-center mb-4">До категорії <strong>Тарілки</strong> входять</h2>
+    <div class="container-category text-center">
+        <a href="#soup" class="category-btn">Тарілки для супу</a>
+        <a href="#tea" class="category-btn">Тарілки для чаю</a>
+        <a href="#meat" class="category-btn">Тарілки для м'яса</a>
+        <a href="#salad" class="category-btn">Тарілки для салата</a>
+    </div>
+</div>
+
+<div id="soup" class="container-goods my-5">
+    <h2 class="text-center mb-4"><strong>Тарілки для супу</strong></h2>
+    <div class="container-goods-card text-center">
+        <div class="card">
+            <img th:src="@{tarilka.jpg}" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Назва товару</h5>
+                <p class="card-text">Опис товару тут. Короткий і інформативний опис того, що представляє цей товар.</p>
+                <p class="card-price">Ціна: $20.00</p>
+                <button class="btn btn-success">Додати до кошика</button>
+                <button class="btn btn-light btn-favorite"><i class="fa fa-heart"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img th:src="@{tarilka.jpg}" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Назва товару</h5>
+                <p class="card-text">Опис товару тут. Короткий і інформативний опис того, що представляє цей товар.</p>
+                <p class="card-price">Ціна: $20.00</p>
+                <button class="btn btn-success">Додати до кошика</button>
+                <button class="btn btn-light btn-favorite"><i class="fa fa-heart"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img th:src="@{tarilka.jpg}" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Назва товару</h5>
+                <p class="card-text">Опис товару тут. Короткий і інформативний опис того, що представляє цей товар.</p>
+                <p class="card-price">Ціна: $20.00</p>
+                <button class="btn btn-success">Додати до кошика</button>
+                <button class="btn btn-light btn-favorite"><i class="fa fa-heart"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img th:src="@{tarilka.jpg}" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Назва товару</h5>
+                <p class="card-text">Опис товару тут. Короткий і інформативний опис того, що представляє цей товар.</p>
+                <p class="card-price">Ціна: $20.00</p>
+                <button class="btn btn-success">Додати до кошика</button>
+                <button class="btn btn-light btn-favorite"><i class="fa fa-heart"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="tea" class="container-goods my-5">
+    <h2 class="text-center mb-4"><strong>Тарілки для чаю</strong></h2>
+    <div class="container-goods-card text-center">
+        <p>//////////////////////////////////////////////////////////////////</p>
+    </div>
+</div>
+
+<div id="meat" class="container-goods my-5">
+    <h2 class="text-center mb-4"><strong>Тарілки для м'яса</strong></h2>
+    <div class="container-goods-card text-center">
+        <p>//////////////////////////////////////////////////////////////////</p>
+    </div>
+</div>
+
+<div id="salad" class="container-goods my-5">
+    <h2 class="text-center mb-4"><strong>Тарілки для салата</strong></h2>
+    <div class="container-goods-card text-center">
+        <p>//////////////////////////////////////////////////////////////////</p>
+    </div>
+</div>
+
+<footer th:insert="footer"></footer>
+</body>
+</html>

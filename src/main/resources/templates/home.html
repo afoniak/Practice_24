@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>SHINY DISHES</title>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="categories before-logo">
+            <a th:href="@{/contact}" class="category-link">Тарілки</a>
+            <a th:href="@{/login}" class="category-link">Стакани</a>
+        </div>
+        <div class="logo-container">
+            <a href="/" class="logo-link">
+                <img th:src="@{logo.png}" alt="logo">
+            </a>
+        </div>
+        <div class="categories after-logo">
+            <a href="/" class="category-link">Прибори</a>
+            <a href="/" class="category-link">Чашки</a>
+        </div>
+    </div>
+</header>
+
+<div class="text-body">
+    <p>Зроби найкращий вибір в своєму житті!</p>
+</div>
+<div class="main-content">
+    <button class="button-start" onclick="location.href='';">Переглянути асортимент</button>
+    <div class="container">
+        <div class="container-description container-description-reverse">
+            <div class="text-container">
+                <h2>SHINY DISHES</h2>
+                <p class="text-in-container"><strong>Shiny Dishes</strong> — провідна компанія України у сфері продажу високоякісного посуду.
+                    Заснована з баченням забезпечення кожного дому стильним та довговічним посудом, МИ пропонуємо широкий асортимент
+                    продукції від елегантних сервізів до щоденних кухонних рішень. Наші вироби виготовлені з найкращих матеріалів,
+                    що гарантує їх безпеку та тривале використання.</p>
+                <hr class="divider">
+            </div>
+            <img th:src="@{Dishes.jpg}" alt="A4 Paper Image" class="dishes-image">
+        </div>
+        <div class="container-description">
+            <div class="text-container">
+                <p class="text-in-container">У <strong>Shiny Dishes</strong> ми прагнемо не лише задовольняти потреби наших клієнтів,
+                    а й перевершувати їх очікування, надаючи бездоганний сервіс та професійну підтримку.
+                    Завдяки цьому ми зарекомендували себе як надійний партнер в домашньому господарстві та серед гурманів країни.
+                    Вибираючи "Shiny Dishes", ви вибираєте якість та красу, що трансформують вашу кухню та обідній стіл.</p>
+            </div>
+            <img th:src="@{dishes2.jpg}" alt="A4 Paper Image" class="dishes-image">
+        </div>
+    </div>
+
+    <hr class="divider">
+    <div class="review">
+        <h2> Відгуки </h2>
+        <div class="review-container">
+            <img th:src="@{elon-musk.jpg}" alt="User Image">
+            <div class="review-info">
+                <p class="name-review">Elon Musk</p>
+                <p>Найіноваційніший посуд який я бачив</p>
+                <div class="stars-container">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+            </div>
+        </div>
+        <div class="review-container">
+            <img th:src="@{jeff-bezos.jpg}" alt="User Image">
+            <div class="review-info">
+                <p class="name-review">Jeff Bezos</p>
+                <p>Майже всі мої працівники в "Amazon",використовують вашу продукцію</p>
+                <div class="stars-container">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+            </div>
+        </div>
+        <div class="review-container">
+            <img th:src="@{tim-cook.jpg}" alt="User Image">
+            <div class="review-info">
+                <p class="name-review">Tim Cook</p>
+                <p>Мені здається таріка повинна кожтувати 399,99$</p>
+                <div class="stars-container">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+            </div>
+        </div>
+        <div class="review-container">
+            <img th:src="@{mark-zuckerberg.jpg}" alt="User Image">
+            <div class="review-info">
+                <p class="name-review">Mark Zuckerberg</p>
+                <p>Не бачу конкурентів цій продукції</p>
+                <div class="stars-container">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+            </div>
+        </div>
+        <div class="review-container">
+            <img th:src="@{bill-gates.jpg}" alt="User Image">
+            <div class="review-info">
+                <p class="name-review">Bill Gates</p>
+                <p>Якщо заходить мова про найкращий посуд, безсумніву це "dShiny Dishes"!</p>
+                <div class="stars-container">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+    <div class="container-footer">
+        <div class="footer-content">
+            <h3>Контакти</h3>
+            <div class="contact-info">
+                <p>Адреса: м.Чернігів вул.Білоуса 33/2</p>
+                <p>Телефон: +(380)-63-709-8904</p>
+                <p>Email: <a href="mailto:just-resume-support@gmail.com" class="contact-email">shiny-dishes-support@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-content-1">
+            <h3>Соціальні мережі</h3>
+            <div class="social-icons">
+                <div class="fa-facebook">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+                <div class="fa-twitter">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="fa-instagram">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="fa-youtube">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="fa-telegram">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024, Всі права захищені</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{login-style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>SHINY DISHES</title>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="categories before-logo">
+            <a th:href="@{/contact}" class="category-link">Тарілки</a>
+            <a th:href="@{/login}" class="category-link">Стакани</a>
+        </div>
+        <div class="logo-container">
+            <a href="/" class="logo-link">
+                <img th:src="@{logo.png}" alt="logo">
+            </a>
+        </div>
+        <div class="categories after-logo">
+            <a href="/" class="category-link">Прибори</a>
+            <a href="/" class="category-link">Чашки</a>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <form action="/" method="post">
+        <label for="email">Пошта</label>
+        <input type="text" id="email" name="email" placeholder="Введіть свою пошту">
+
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" placeholder="Введіть пароль">
+
+        <button class="btn" type="submit">Ввійти</button>
+        <button type="button" class="btn telegram-btn">
+            <i class="fab fa-telegram-plane"></i> Ввійти за допомогою Telegram
+        </button>
+
+        <p>У вас немає акаунта? - <a th:href="@{/login}">зареєструйтесь</a>!</p>
+    </form>
+</div>
+
+</html>
