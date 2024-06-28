@@ -1,10 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{goods-style.css}">
+    <title>SHINY DISHES</title>
 </head>
 <body>
-$END$
+<header th:insert="header"></header>
+<br><br>
+<div class="container my-5">
+    <h2 class="text-center mb-4">До категорії <strong>Прибори</strong> входять</h2>
+    <div class="container-category text-center">
+        <a href="#spoons" class="category-btn">Ложки</a>
+        <a href="#forks" class="category-btn">Вилки</a>
+        <a href="#knives" class="category-btn">Ножі та інше</a>
+    </div>
+</div>
+
+<div id="spoons" class="container-goods my-5">
+    <h2 class="text-center mb-4"><strong>Ложки</strong></h2>
+    <div class="container-goods-card text-center">
+        <div th:each="dish : ${spoonDishes}" class="card">
+            <img th:src="@{${dish.img}}" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${dish.title}">Назва товару</h5>
+                <p class="card-text" th:text="${dish.text}">Опис товару</p>
+                <p class="card-price" th:text="'Ціна: ₴' + ${dish.price}">Ціна</p>
+                <button class="btn btn-success"
+                        th:attr="onclick=|addToCart('spoon-${dish.id}', '${dish.title}', '${dish.price}', '${dish.img}', '${dish.text}')|"
+                        th:text="${dish.status == 'not available'} ? 'Не доступно' : 'Додати до кошика'"
+                        th:disabled="${dish.status == 'not available'}">
+                </button>
+                <button class="btn btn-light btn-favorite"
+                        data-id="spoon-${dish.id}"
+                        th:attr="onclick=|addToFavorites('spoon-${dish.id}', '${dish.title}', '${dish.price}', '${dish.img}', '${dish.text}', '${dish.status}')|">
+                    <i class="fa fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="forks" class="container-goods my-5">
+    <h2 class="text-center mb-4"><strong>Вилки</strong></h2>
+    <div class="container-goods-card text-center">
+        <div th:each="dish : ${forkDishes}" class="card">
+            <img th:src="@{${dish.img}}" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${dish.title}">Назва товару</h5>
+                <p class="card-text" th:text="${dish.text}">Опис товару</p>
+                <p class="card-price" th:text="'Ціна: ₴' + ${dish.price}">Ціна</p>
+                <button class="btn btn-success"
+                        th:attr="onclick=|addToCart('fork-${dish.id}', '${dish.title}', '${dish.price}', '${dish.img}', '${dish.text}')|"
+                        th:text="${dish.status == 'not available'} ? 'Не доступно' : 'Додати до кошика'"
+                        th:disabled="${dish.status == 'not available'}">
+                </button>
+                <button class="btn btn-light btn-favorite"
+                        data-id="fork-${dish.id}"
+                        th:attr="onclick=|addToFavorites('fork-${dish.id}', '${dish.title}', '${dish.price}', '${dish.img}', '${dish.text}', '${dish.status}')|">
+                    <i class="fa fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="knives" class="container-goods my-5">
+    <h2 class="text-center mb-4"><strong>Ножі та інше</strong></h2>
+    <div class="container-goods-card text-center">
+        <div th:each="dish : ${knifeDishes}" class="card">
+            <img th:src="@{${dish.img}}" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${dish.title}">Назва товару</h5>
+                <p class="card-text" th:text="${dish.text}">Опис товару</p>
+                <p class="card-price" th:text="'Ціна: ₴' + ${dish.price}">Ціна</p>
+                <button class="btn btn-success"
+                        th:attr="onclick=|addToCart('knife-${dish.id}', '${dish.title}', '${dish.price}', '${dish.img}', '${dish.text}')|"
+                        th:text="${dish.status == 'not available'} ? 'Не доступно' : 'Додати до кошика'"
+                        th:disabled="${dish.status == 'not available'}">
+                </button>
+                <button class="btn btn-light btn-favorite"
+                        data-id="knife-${dish.id}"
+                        th:attr="onclick=|addToFavorites('knife-${dish.id}', '${dish.title}', '${dish.price}', '${dish.img}', '${dish.text}', '${dish.status}')|">
+                    <i class="fa fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/basket.js}"></script>
+<script th:src="@{/js/selected.js}"></script>
+<script>
+    function toggleMenu() {
+        const categories = document.querySelector('.categories');
+        categories.classList.toggle('active');
+    }
+</script>
+<footer th:insert="footer"></footer>
 </body>
 </html>
